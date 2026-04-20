@@ -14,13 +14,15 @@ The plot shows how the output voltage approaches Vin as R2 increases, and approa
 # Import required libraries
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("Agg")
 
 # Set circuit parameters
 Vin = 5.0  # Input voltage in volts
 R1 = 1e3   # Series resistor in ohms (1 kOhm)
 
 # Generate a logarithmic sweep of R2 values
-R2 = np.logspace(2, 5, 200)  # 100 Ohms to 100 kOhms
+R2 = np.logspace(1, 10000, 200)  # 100 Ohms to 100 kOhms
 
 # Calculate output voltage for each R2
 Vout = Vin * R2 / (R1 + R2)
